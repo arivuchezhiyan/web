@@ -1,0 +1,254 @@
+/* ==========================================================================
+   HAMSTER CATCHING GAME STYLESHEET
+   Clean, vibrant, responsive design with smooth mole animations
+   ========================================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f0fdf4;
+    color: #1f2937;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-wrapper {
+    background: #ffffff;
+    border: 2px solid #bbf7d0;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 540px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+}
+
+.game-header {
+    text-align: center;
+}
+
+.game-header h1 {
+    font-size: 26px;
+    font-weight: 800;
+    color: #15803d;
+    margin-bottom: 4px;
+}
+
+.tagline {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+/* Stats Bar */
+.stats-bar {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.stat-box {
+    flex: 1;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.timer-box {
+    background: #fef2f2;
+    border-color: #fecaca;
+}
+
+.timer-box .stat-val {
+    color: #dc2626;
+}
+
+.stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #6b7280;
+    letter-spacing: 0.05em;
+}
+
+.stat-val {
+    font-size: 22px;
+    font-weight: 800;
+    color: #15803d;
+}
+
+/* Controls */
+.controls-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.difficulty-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #4b5563;
+}
+
+select {
+    padding: 6px 10px;
+    font-size: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    background: #fff;
+    outline: none;
+    cursor: pointer;
+}
+
+.btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 700;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-primary {
+    background: #16a34a;
+    color: #fff;
+}
+.btn-primary:hover {
+    background: #15803d;
+}
+
+.btn-secondary {
+    background: #f3f4f6;
+    color: #4b5563;
+    border: 1px solid #d1d5db;
+}
+.btn-secondary:hover {
+    background: #e5e7eb;
+}
+
+/* Holes Grid */
+.holes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    background: #86efac;
+    padding: 16px;
+    border-radius: 12px;
+    border: 3px solid #4ade80;
+}
+
+.hole {
+    height: 105px;
+    background: #78350f; /* Soil brown */
+    border-radius: 50% / 40%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: inset 0 10px 14px rgba(0, 0, 0, 0.45);
+    border-bottom: 4px solid #451a03;
+}
+
+.hamster {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: bottom 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    user-select: none;
+}
+
+.hole.up .hamster {
+    bottom: 5px;
+}
+
+.hamster-face {
+    font-size: 52px;
+    line-height: 1;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.25));
+    transition: transform 0.1s ease;
+}
+
+.hamster:active .hamster-face {
+    transform: scale(0.85);
+}
+
+.hole.hit .hamster-face {
+    animation: caughtShake 0.2s ease-in-out;
+}
+
+@keyframes caughtShake {
+    0% { transform: scale(1.1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-15deg); }
+    50% { transform: scale(1.1) rotate(15deg); }
+    100% { transform: scale(0.8) rotate(0deg); }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    width: 85%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-card h2 {
+    color: #15803d;
+    font-size: 22px;
+}
+
+.highlight-score {
+    font-size: 24px;
+    color: #16a34a;
+}
+
+.sub-msg {
+    font-size: 13px;
+    color: #6b7280;
+}

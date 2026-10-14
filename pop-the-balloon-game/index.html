@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop the Balloon Game 🎈</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        <!-- Top HUD -->
+        <header class="hud-bar">
+            <div class="hud-item">
+                <span class="label">SCORE</span>
+                <span id="score-display" class="val">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">LIVES</span>
+                <span id="lives-display" class="val lives">❤️❤️❤️</span>
+            </div>
+            <div class="hud-item">
+                <span class="label">LEVEL</span>
+                <span id="level-display" class="val">1</span>
+            </div>
+            <div class="hud-actions">
+                <button id="start-btn" class="btn btn-primary">Start Game</button>
+            </div>
+        </header>
+
+        <!-- Sky Game Area -->
+        <main id="game-sky" class="sky-area">
+            <div class="cloud cloud-1">☁️</div>
+            <div class="cloud cloud-2">☁️</div>
+            <div class="cloud cloud-3">☁️</div>
+            
+            <div id="start-overlay" class="overlay-screen">
+                <div class="overlay-card">
+                    <h2>🎈 Pop the Balloons!</h2>
+                    <p>Click or tap the floating balloons before they float away into the clouds.</p>
+                    <p class="rules">🎈 Normal: +10 pts &bull; ⭐ Golden: +25 pts &bull; 💣 Bomb: -1 Life!</p>
+                    <button id="overlay-start-btn" class="btn btn-primary btn-large">Start Playing</button>
+                </div>
+            </div>
+
+            <!-- Game Over Overlay -->
+            <div id="game-over-overlay" class="overlay-screen" style="display: none;">
+                <div class="overlay-card">
+                    <h2>💥 Game Over!</h2>
+                    <p>All lives lost!</p>
+                    <div class="final-score-wrap">
+                        <span>Final Score:</span>
+                        <strong id="final-score-val">0</strong>
+                    </div>
+                    <button id="restart-btn" class="btn btn-primary btn-large">Play Again</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

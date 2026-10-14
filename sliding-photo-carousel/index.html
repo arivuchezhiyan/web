@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Photo Carousel 📸</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="slider-wrapper">
+        <header class="slider-header">
+            <h1>📸 Sliding Photo Carousel</h1>
+            <p>Responsive image carousel with smooth slide transitions, dot indicators, and auto-play.</p>
+        </header>
+
+        <!-- Carousel Container -->
+        <div class="carousel-container" id="carousel">
+            <!-- Slides Track -->
+            <div class="slides-track" id="slides-track">
+
+                <!-- Slide 1: Emerald Mountains -->
+                <div class="slide" data-index="0">
+                    <div class="slide-art gradient-1">
+                        <div class="art-elements">
+                            <span class="scene-emoji">🏔️</span>
+                            <div class="scene-sun"></div>
+                        </div>
+                    </div>
+                    <div class="slide-caption">
+                        <h3>1. Emerald Alpine Peaks</h3>
+                        <p>Breathtaking mountain ridges covered in morning alpine mist and crisp pine breeze.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Sunset Ocean -->
+                <div class="slide" data-index="1">
+                    <div class="slide-art gradient-2">
+                        <div class="art-elements">
+                            <span class="scene-emoji">🌊</span>
+                            <div class="scene-sun sunset"></div>
+                        </div>
+                    </div>
+                    <div class="slide-caption">
+                        <h3>2. Golden Sunset Coast</h3>
+                        <p>Gentle oceanic waves shimmering under vibrant amber and lavender twilight skies.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Autumn Forest -->
+                <div class="slide" data-index="2">
+                    <div class="slide-art gradient-3">
+                        <div class="art-elements">
+                            <span class="scene-emoji">🍂</span>
+                            <div class="scene-sun autumn"></div>
+                        </div>
+                    </div>
+                    <div class="slide-caption">
+                        <h3>3. Whispering Autumn Woodlands</h3>
+                        <p>Golden foliage blanketing serene forest trails illuminated by warm midday sunlight.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Cyber Cityscape -->
+                <div class="slide" data-index="3">
+                    <div class="slide-art gradient-4">
+                        <div class="art-elements">
+                            <span class="scene-emoji">🌃</span>
+                            <div class="scene-sun night"></div>
+                        </div>
+                    </div>
+                    <div class="slide-caption">
+                        <h3>4. Neon Metropolis Horizon</h3>
+                        <p>Gleaming futuristic architectural silhouettes reflected in calm harbor waters.</p>
+                    </div>
+                </div>
+
+                <!-- Slide 5: Cosmic Nebula -->
+                <div class="slide" data-index="4">
+                    <div class="slide-art gradient-5">
+                        <div class="art-elements">
+                            <span class="scene-emoji">✨</span>
+                            <div class="scene-sun galaxy"></div>
+                        </div>
+                    </div>
+                    <div class="slide-caption">
+                        <h3>5. Deep Starlight Nebula</h3>
+                        <p>Stunning stellar clouds and cosmic dust swirling through infinite deep space.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation Arrows -->
+            <button class="nav-arrow prev-btn" id="prev-btn" aria-label="Previous Slide">&#10094;</button>
+            <button class="nav-arrow next-btn" id="next-btn" aria-label="Next Slide">&#10095;</button>
+
+            <!-- Auto-Play Progress Bar -->
+            <div class="progress-bar-wrap">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </div>
+
+        <!-- Dot Indicators -->
+        <div class="dots-container" id="dots-container">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+            <span class="dot" data-slide="3"></span>
+            <span class="dot" data-slide="4"></span>
+        </div>
+
+        <!-- Carousel Toolbar -->
+        <div class="carousel-toolbar">
+            <div class="slide-counter">
+                Slide <span id="current-slide-num">1</span> of <span id="total-slides-num">5</span>
+            </div>
+            <div class="toolbar-actions">
+                <button id="autoplay-btn" class="btn btn-secondary">⏸ Pause Auto-Play</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
