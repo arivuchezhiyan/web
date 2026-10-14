@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Technologies Exam Reference - Layouts & Selectors</title>
+    <link rel="stylesheet" href="simple.css">
+</head>
+<body>
+
+    <!-- Header Section (ID Selector demonstration) -->
+    <header id="main-header">
+        <h1>Web Technology Exam Reference Guide</h1>
+        <p class="subtitle">Complete Demonstration of 2-Column, 3-Column, Grid Layouts & All CSS Selectors</p>
+    </header>
+
+    <div class="page-container">
+
+        <!-- =========================================================
+             SECTION 1: TWO-COLUMN LAYOUT (Sidebar + Main Content)
+             ========================================================= -->
+        <section class="demo-section">
+            <h2 class="section-title">1. Two-Column Layout (Flexbox)</h2>
+            <p class="desc">Common exam pattern: Left sidebar (30%) and Right main content (70%).</p>
+            
+            <div class="two-column-layout">
+                <aside class="two-col-sidebar">
+                    <h3>Left Sidebar</h3>
+                    <ul>
+                        <li><a href="#selectors">CSS Selectors</a></li>
+                        <li><a href="#layouts">Page Layouts</a></li>
+                        <li><a href="#validation">Form Validation</a></li>
+                        <li><a href="#dom">DOM Operations</a></li>
+                    </ul>
+                </aside>
+                <main class="two-col-content">
+                    <h3>Main Content Area</h3>
+                    <p>This is the primary content area occupying 70% width. Flexbox makes the sidebar and content equal height easily.</p>
+                    <p>CSS properties used: <code>display: flex; gap: 15px;</code> on parent, with <code>flex: 1;</code> and <code>flex: 2.3;</code>.</p>
+                </main>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SECTION 2: THREE-COLUMN LAYOUT (Nav + Article + Aside)
+             ========================================================= -->
+        <section class="demo-section">
+            <h2 class="section-title">2. Three-Column Layout (Holy Grail Pattern)</h2>
+            <p class="desc">Common exam pattern: Left Navigation (20%), Middle Main (60%), Right Ads/Aside (20%).</p>
+
+            <div class="three-column-layout">
+                <nav class="col-nav">
+                    <h4>Navigation</h4>
+                    <p>Left column links</p>
+                    <ul>
+                        <li>Dashboard</li>
+                        <li>Profile</li>
+                        <li>Settings</li>
+                    </ul>
+                </nav>
+                <article class="col-main">
+                    <h4>Middle Main Article</h4>
+                    <p>This middle column takes the majority of space (flex: 3). It contains the core article text, headings, and data tables.</p>
+                    <p>Both left and right columns flank this center article symmetrically.</p>
+                </article>
+                <aside class="col-aside">
+                    <h4>Right Sidebar</h4>
+                    <p>Extra info, widgets, recent notifications, and links.</p>
+                </aside>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SECTION 3: CSS GRID LAYOUT
+             ========================================================= -->
+        <section class="demo-section">
+            <h2 class="section-title">3. CSS Grid Layout (grid-template-columns)</h2>
+            <p class="desc">Demonstrates <code>display: grid</code>, <code>grid-template-columns</code>, and <code>grid-column: span</code>.</p>
+
+            <div class="grid-container">
+                <div class="grid-item header-box">Grid Item 1: Full-Width Header (span 3)</div>
+                <div class="grid-item">Grid Item 2: Column 1</div>
+                <div class="grid-item">Grid Item 3: Column 2</div>
+                <div class="grid-item">Grid Item 4: Column 3</div>
+                <div class="grid-item featured-box">Grid Item 5: Wide Feature Box (span 2)</div>
+                <div class="grid-item">Grid Item 6: Normal Box (span 1)</div>
+                <div class="grid-item footer-box">Grid Item 7: Full-Width Footer (span 3)</div>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SECTION 4: ALL TYPES OF CSS SELECTORS (EXAM TOPICS)
+             ========================================================= -->
+        <section class="demo-section" id="selectors-section">
+            <h2 class="section-title">4. CSS Selectors Comprehensive Reference</h2>
+            <p class="desc">Every type of CSS selector commonly tested in university/college lab and theory exams:</p>
+
+            <!-- 4.1 Combinator Selectors -->
+            <div class="selector-demo-box">
+                <h3>Combinator Selectors</h3>
+                <div class="combinator-parent">
+                    <p class="descendant-test">1. Descendant Selector: <code>div p</code> (matches any p inside div)</p>
+                    <div class="nested-wrapper">
+                        <p class="child-test">2. Child Selector: <code>div &gt; p</code> (direct child only)</p>
+                    </div>
+                </div>
+                <h4 class="sibling-head">Heading for Sibling Testing</h4>
+                <p class="adjacent-sibling">3. Adjacent Sibling Selector: <code>h4 + p</code> (immediately following sibling)</p>
+                <p class="general-sibling">4. General Sibling Selector: <code>h4 ~ p</code> (any subsequent sibling)</p>
+            </div>
+
+            <!-- 4.2 Attribute Selectors -->
+            <div class="selector-demo-box">
+                <h3>Attribute Selectors</h3>
+                <div class="attr-inputs">
+                    <input type="text" placeholder="[type='text'] selector target" class="sample-input">
+                    <input type="password" placeholder="[type='password'] selector target" class="sample-input">
+                    <input type="email" required placeholder="[required] attribute target" class="sample-input">
+                </div>
+                <div class="attr-links">
+                    <a href="https://example.com" class="attr-link">Link with https (matches [href^='https'])</a>
+                    <a href="document.pdf" class="attr-link">Document link (matches [href$='.pdf'])</a>
+                </div>
+            </div>
+
+            <!-- 4.3 Pseudo-Classes -->
+            <div class="selector-demo-box">
+                <h3>Structural Pseudo-Classes (:first-child, :last-child, :nth-child)</h3>
+                <ul class="pseudo-list">
+                    <li>List item 1 (matches <code>:first-child</code>)</li>
+                    <li>List item 2 (matches <code>:nth-child(even)</code>)</li>
+                    <li>List item 3 (matches <code>:nth-child(odd)</code>)</li>
+                    <li>List item 4 (matches <code>:nth-child(even)</code>)</li>
+                    <li>List item 5 (matches <code>:last-child</code>)</li>
+                </ul>
+            </div>
+
+            <!-- 4.4 Pseudo-Elements -->
+            <div class="selector-demo-box">
+                <h3>Pseudo-Elements (::before, ::after, ::first-letter)</h3>
+                <p class="pseudo-element-demo">This paragraph demonstrates the <code>::first-letter</code> styling, and has automated badges inserted using <code>::before</code> and <code>::after</code> pseudo-elements.</p>
+            </div>
+        </section>
+
+        <!-- =========================================================
+             SECTION 5: JAVASCRIPT DOM & FORM VALIDATION (EXAM TOPICS)
+             ========================================================= -->
+        <section class="demo-section">
+            <h2 class="section-title">5. JavaScript DOM & Form Validation (simple.js)</h2>
+            <p class="desc">Standard exam requirement: validate required fields, email format, minimum length, and dynamic DOM manipulation.</p>
+
+            <div class="two-column-layout">
+                <!-- Form Validation -->
+                <div class="exam-card">
+                    <h3>Student Registration Form</h3>
+                    <form id="student-form" novalidate>
+                        <div class="form-group">
+                            <label for="student-name">Full Name *</label>
+                            <input type="text" id="student-name" placeholder="Enter student name (min 3 chars)">
+                            <small class="error-msg" id="name-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="student-email">Email Address *</label>
+                            <input type="email" id="student-email" placeholder="student@example.com">
+                            <small class="error-msg" id="email-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="student-dept">Department *</label>
+                            <select id="student-dept">
+                                <option value="">-- Select Department --</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="ECE">ECE</option>
+                            </select>
+                            <small class="error-msg" id="dept-error"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms-check"> I agree to the exam guidelines
+                            </label>
+                            <small class="error-msg" id="terms-error"></small>
+                        </div>
+
+                        <button type="submit" id="btn-submit-form" class="exam-btn">Submit & Validate</button>
+                        <div id="form-success-banner" class="success-banner" style="display: none;"></div>
+                    </form>
+                </div>
+
+                <!-- Interactive DOM Operations -->
+                <div class="exam-card">
+                    <h3>Dynamic DOM Operations</h3>
+                    <p class="small-note">Demonstrating <code>createElement()</code>, <code>appendChild()</code>, <code>removeChild()</code>, and style manipulation:</p>
+
+                    <div class="dom-buttons">
+                        <button id="btn-add-item" class="exam-btn btn-sm">Add Item</button>
+                        <button id="btn-remove-item" class="exam-btn btn-sm btn-danger">Remove Last</button>
+                        <button id="btn-toggle-color" class="exam-btn btn-sm btn-alt">Toggle Highlight</button>
+                    </div>
+
+                    <ul id="dynamic-list" class="dynamic-list">
+                        <li>Default Item 1</li>
+                        <li>Default Item 2</li>
+                    </ul>
+
+                    <div class="dom-counter-box">
+                        <span>Items Count: <strong id="dom-count">2</strong></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Simple Footer -->
+    <footer id="main-footer">
+        <p>&copy; Web Technologies Lab & Exam Manual &bull; HTML5, CSS3 & JavaScript</p>
+    </footer>
+
+    <script src="simple.js"></script>
+</body>
+</html>

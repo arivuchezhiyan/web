@@ -1,0 +1,588 @@
+/* ==========================================================================
+   SIMPLE.CSS — Web Technologies Exam Reference Stylesheet
+   Demonstrates:
+   1. All Types of CSS Selectors
+   2. Two-Column Layout (Flexbox)
+   3. Three-Column Layout (Flexbox)
+   4. CSS Grid Layout
+   5. Clean, simple, high-readability exam colors
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 1: UNIVERSAL SELECTOR (*)
+   Applies to every single element on the page.
+   -------------------------------------------------------------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 2: TYPE / ELEMENT SELECTOR (body, p, a, code, etc.)
+   Targets elements by their HTML tag name.
+   -------------------------------------------------------------------------- */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f6f9; /* Simple soft neutral background */
+    color: #333333;
+    padding-bottom: 40px;
+}
+
+p {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #4a5568;
+}
+
+code {
+    background-color: #edf2f7;
+    color: #c53030;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 13px;
+    border: 1px solid #e2e8f0;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 3: GROUPING SELECTOR (h1, h2, h3, h4)
+   Applies shared styles to multiple selectors separated by commas.
+   -------------------------------------------------------------------------- */
+h1, h2, h3, h4 {
+    color: #2b6cb0; /* Standard exam primary blue */
+    font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 4: ID SELECTOR (#id-name)
+   Targets a unique element with a specific id attribute. Highest specificity.
+   -------------------------------------------------------------------------- */
+#main-header {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    padding: 24px 20px;
+    text-align: center;
+    border-bottom: 3px solid #1a4971;
+}
+
+#main-header h1 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+#main-footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 13px;
+    color: #718096;
+    background-color: #e2e8f0;
+    margin-top: 40px;
+    border-top: 1px solid #cbd5e0;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 5: CLASS SELECTOR (.class-name)
+   Targets all elements that have the specified class name.
+   -------------------------------------------------------------------------- */
+.page-container {
+    max-width: 1000px;
+    margin: 24px auto;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.subtitle {
+    color: #e2e8f0;
+    font-size: 13px;
+}
+
+.demo-section {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    font-size: 18px;
+    border-bottom: 2px solid #edf2f7;
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+}
+
+.desc {
+    font-size: 13px;
+    color: #718096;
+    margin-bottom: 16px;
+}
+
+/* ==========================================================================
+   LAYOUT 1: TWO-COLUMN LAYOUT (Flexbox)
+   Left sidebar (approx 30%) + Right main content (approx 70%)
+   ========================================================================== */
+.two-column-layout {
+    display: flex;
+    gap: 16px;
+}
+
+.two-col-sidebar {
+    flex: 1; /* Takes 1 part (~30%) */
+    background-color: #edf2f7;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+.two-col-sidebar h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.two-col-sidebar ul {
+    list-style-type: none;
+}
+
+.two-col-sidebar li {
+    margin-bottom: 8px;
+}
+
+.two-col-sidebar a {
+    text-decoration: none;
+    color: #2b6cb0;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.two-col-sidebar a:hover {
+    text-decoration: underline;
+}
+
+.two-col-content {
+    flex: 2.3; /* Takes 2.3 parts (~70%) */
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+.two-col-content h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+/* ==========================================================================
+   LAYOUT 2: THREE-COLUMN LAYOUT (Holy Grail Pattern)
+   Left Nav (flex: 1) + Center Main (flex: 3) + Right Aside (flex: 1)
+   ========================================================================== */
+.three-column-layout {
+    display: flex;
+    gap: 14px;
+}
+
+.col-nav {
+    flex: 1;
+    background-color: #ebf8ff; /* Soft blue tint */
+    border: 1px solid #bee3f8;
+    border-radius: 5px;
+    padding: 14px;
+}
+
+.col-main {
+    flex: 3;
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 14px;
+}
+
+.col-aside {
+    flex: 1;
+    background-color: #f7fafc; /* Soft gray tint */
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 14px;
+}
+
+.col-nav h4, .col-main h4, .col-aside h4 {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.col-nav ul {
+    padding-left: 18px;
+    font-size: 13px;
+    color: #2c5282;
+}
+
+/* ==========================================================================
+   LAYOUT 3: CSS GRID LAYOUT
+   display: grid with grid-template-columns and grid-column: span
+   ========================================================================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 12px;
+}
+
+.grid-item {
+    background-color: #edf2f7;
+    border: 1px solid #cbd5e0;
+    border-radius: 5px;
+    padding: 16px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #2d3748;
+}
+
+/* Grid Spanning Exam Patterns */
+.grid-item.header-box {
+    grid-column: span 3; /* Spans all 3 columns across top */
+    background-color: #bee3f8;
+    color: #2b6cb0;
+}
+
+.grid-item.featured-box {
+    grid-column: span 2; /* Spans 2 columns */
+    background-color: #feebc8; /* Soft amber */
+    color: #c05621;
+}
+
+.grid-item.footer-box {
+    grid-column: span 3; /* Spans all 3 columns across bottom */
+    background-color: #e2e8f0;
+    color: #4a5568;
+}
+
+/* ==========================================================================
+   SECTION 4: ALL TYPES OF CSS SELECTORS
+   ========================================================================== */
+.selector-demo-box {
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 14px;
+    margin-bottom: 14px;
+}
+
+.selector-demo-box h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #2d3748;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 6: DESCENDANT SELECTOR (space)
+   Matches any p element that is inside .combinator-parent at ANY level.
+   -------------------------------------------------------------------------- */
+.combinator-parent p {
+    color: #2c5282;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 7: CHILD SELECTOR (>)
+   Matches ONLY p elements that are DIRECT children of .nested-wrapper.
+   -------------------------------------------------------------------------- */
+.nested-wrapper > .child-test {
+    font-weight: bold;
+    color: #276749; /* Dark green */
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 8: ADJACENT SIBLING SELECTOR (+)
+   Matches the p element that appears IMMEDIATELY AFTER .sibling-head.
+   -------------------------------------------------------------------------- */
+.sibling-head + .adjacent-sibling {
+    background-color: #feebc8;
+    padding: 6px 10px;
+    border-left: 4px solid #dd6b20;
+    margin: 6px 0;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 9: GENERAL SIBLING SELECTOR (~)
+   Matches ANY p element that follows .sibling-head at the same hierarchy.
+   -------------------------------------------------------------------------- */
+.sibling-head ~ .general-sibling {
+    font-style: italic;
+    color: #718096;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 10: ATTRIBUTE SELECTORS
+   Targets elements based on presence or value of attributes.
+   -------------------------------------------------------------------------- */
+/* Exact attribute value */
+input[type="text"] {
+    border: 1px solid #a0aec0;
+}
+
+input[type="password"] {
+    border: 1px solid #cbd5e0;
+    background-color: #fffaf0;
+}
+
+/* Attribute presence */
+input[required] {
+    border-left: 3px solid #e53e3e; /* Red indicator for required */
+}
+
+/* Attribute value starts with (^) */
+a[href^="https"] {
+    color: #2b6cb0;
+    font-weight: 600;
+}
+
+/* Attribute value ends with ($) */
+a[href$=".pdf"] {
+    color: #c53030;
+    font-weight: 600;
+}
+
+.sample-input {
+    display: block;
+    width: 100%;
+    max-width: 380px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+}
+
+.attr-links {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 13px;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 11: STRUCTURAL PSEUDO-CLASSES
+   (:first-child, :last-child, :nth-child)
+   -------------------------------------------------------------------------- */
+.pseudo-list {
+    list-style-type: none;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.pseudo-list li {
+    padding: 8px 12px;
+    font-size: 13px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+/* First child */
+.pseudo-list li:first-child {
+    background-color: #ebf8ff;
+    font-weight: bold;
+}
+
+/* Even rows */
+.pseudo-list li:nth-child(even) {
+    background-color: #f7fafc;
+}
+
+/* Odd rows */
+.pseudo-list li:nth-child(odd):not(:first-child) {
+    background-color: #ffffff;
+}
+
+/* Last child */
+.pseudo-list li:last-child {
+    border-bottom: none;
+    color: #2b6cb0;
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 12: DYNAMIC PSEUDO-CLASSES (:hover, :focus, :active, :checked)
+   -------------------------------------------------------------------------- */
+.exam-btn {
+    background-color: #2b6cb0;
+    color: #ffffff;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.exam-btn:hover {
+    background-color: #2c5282; /* Darker blue on hover */
+}
+
+.exam-btn:active {
+    background-color: #1a365d; /* Darkest on click/active */
+}
+
+.sample-input:focus {
+    border-color: #3182ce;
+    box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   SELECTOR TYPE 13: PSEUDO-ELEMENTS (::before, ::after, ::first-letter)
+   -------------------------------------------------------------------------- */
+.pseudo-element-demo::first-letter {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2b6cb0;
+    float: left;
+    margin-right: 4px;
+    line-height: 1;
+}
+
+.pseudo-element-demo::before {
+    content: "📌 [NOTE] ";
+    font-weight: bold;
+    color: #c05621;
+}
+
+.pseudo-element-demo::after {
+    content: " ✔ Verified";
+    font-size: 11px;
+    color: #276749;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   SECTION 5: FORM & DOM DEMO STYLING
+   ========================================================================== */
+.exam-card {
+    flex: 1;
+    background-color: #f7fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 16px;
+}
+
+.exam-card h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #4a5568;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.error-msg {
+    display: block;
+    color: #e53e3e;
+    font-size: 11px;
+    margin-top: 3px;
+    min-height: 14px;
+}
+
+.success-banner {
+    margin-top: 12px;
+    padding: 10px;
+    background-color: #c6f6d5;
+    border: 1px solid #9ae6b4;
+    color: #22543d;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* DOM Operation buttons & list */
+.dom-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+.btn-danger {
+    background-color: #e53e3e;
+}
+.btn-danger:hover {
+    background-color: #c53030;
+}
+
+.btn-alt {
+    background-color: #4a5568;
+}
+.btn-alt:hover {
+    background-color: #2d3748;
+}
+
+.dynamic-list {
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    background-color: #ffffff;
+    max-height: 130px;
+    overflow-y: auto;
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.dynamic-list li {
+    padding: 6px 10px;
+    font-size: 13px;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.dynamic-list li:last-child {
+    border-bottom: none;
+}
+
+/* Toggleable highlight class for JS demonstration */
+.highlight-row {
+    background-color: #fefcbf !important; /* Soft yellow highlight */
+    color: #744210 !important;
+    font-weight: bold;
+}
+
+.dom-counter-box {
+    font-size: 12px;
+    color: #4a5568;
+}
+
+.small-note {
+    font-size: 12px;
+    color: #718096;
+    margin-bottom: 10px;
+}
