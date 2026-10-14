@@ -1,77 +1,76 @@
 <template>
-  <div class="view-content">
-    <h2>About Fullstack System</h2>
-    <p class="desc">Architecture & Technology Stack</p>
+  <div class="about-container">
+    <div class="header">
+      <h2>About Fullstack System</h2>
+      <p class="desc">System Overview & REST API Reference</p>
+    </div>
 
-    <div class="about-grid">
-      <div class="about-card">
-        <h3>🚀 Vue 3 & Vite</h3>
-        <p>Ultra-fast reactive frontend using modern Composition API and Vite bundler.</p>
-      </div>
+    <!-- Nested Sub-Navigation Tabs for About -->
+    <nav class="sub-nav">
+      <router-link to="/about" class="sub-link" exact-active-class="active">⚙️ Tech Stack</router-link>
+      <router-link to="/about/api" class="sub-link" active-class="active">🔌 API Endpoints</router-link>
+    </nav>
 
-      <div class="about-card">
-        <h3>🍍 Pinia State Store</h3>
-        <p>Lightweight and intuitive store managing global student records and API communications.</p>
-      </div>
-
-      <div class="about-card">
-        <h3>🧭 Vue Router 4</h3>
-        <p>Seamless SPA client-side routing for Home, Directory, About, and Contact Us views.</p>
-      </div>
-
-      <div class="about-card">
-        <h3>🍃 Spring Boot 4 & MongoDB</h3>
-        <p>Robust Java backend with Spring Data MongoDB repository, REST endpoints, and automated tests.</p>
-      </div>
+    <!-- Nested Router View -->
+    <div class="sub-content">
+      <router-view />
     </div>
   </div>
 </template>
 
 <style scoped>
-.view-content {
+.about-container {
   display: flex;
   flex-direction: column;
   gap: 14px;
+}
+
+.header {
+  text-align: center;
 }
 
 h2 {
   margin: 0;
   font-size: 19px;
   color: #111827;
-  text-align: center;
 }
 
 .desc {
-  margin: 0;
+  margin: 4px 0 0 0;
   font-size: 12px;
   color: #6b7280;
-  text-align: center;
 }
 
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 6px;
-}
-
-.about-card {
-  padding: 16px;
-  border: 1px solid #e5e7eb;
+.sub-nav {
+  display: flex;
+  gap: 8px;
+  background: #f3f4f6;
+  padding: 4px;
   border-radius: 6px;
-  background: #f9fafb;
+  justify-content: center;
 }
 
-.about-card h3 {
-  margin: 0 0 6px 0;
-  font-size: 14px;
+.sub-link {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  color: #4b5563;
+  padding: 6px 14px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.sub-link:hover {
   color: #1f2937;
 }
 
-.about-card p {
-  margin: 0;
-  font-size: 12px;
-  color: #4b5563;
-  line-height: 1.5;
+.sub-link.active {
+  background: #ffffff;
+  color: #2563eb;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sub-content {
+  width: 100%;
 }
 </style>
