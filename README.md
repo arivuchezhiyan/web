@@ -1,6 +1,8 @@
-# Web Fullstack Project
+# Web Fullstack Projects
 
-## Structure
-- **fullstack/**
-  - **backend/**: Spring Boot 4 REST API service with MongoDB and MockMvc tests.
-  - **frontend/**: Vue 3 Vite application with centered CRUD UI.
+## Projects
+1. **fullstack/**
+   - Spring Boot REST API + Vue 3 (Single input box + 5 CRUD operations)
+2. **fullstackadvanced1/**
+   - Spring Boot REST API with extended Student model (ID, Name, Email, Age, Department, Address)
+   - Vue 3 Frontend with dedicated inputs, Props, Emits, and component architecture (StudentForm & StudentList)
