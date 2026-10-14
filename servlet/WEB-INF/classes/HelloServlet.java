@@ -4,7 +4,9 @@ import java.io.*;
 
 public class HelloServlet extends HttpServlet {
 
-    public void doPost(HttpServletResponse response,HttpServletRequest request)
+    @Override
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response)
             throws ServletException, IOException {
 
         response.setContentType("text/html");
