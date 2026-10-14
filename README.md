@@ -1,6 +1,6 @@
-# Web
-
-Repository containing fullstack application components.
+# Web Fullstack Project
 
 ## Structure
-- ackend/: Spring Boot 4 REST API service with MongoDB and automated MockMvc tests.
+- **fullstack/**
+  - **backend/**: Spring Boot 4 REST API service with MongoDB and MockMvc tests.
+  - **frontend/**: Vue 3 Vite application with centered CRUD UI.
